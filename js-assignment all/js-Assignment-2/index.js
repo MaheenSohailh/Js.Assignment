@@ -25,7 +25,7 @@
 
    for(var i = 100; i >= 1; i -- ){
   document.writeln(i + " ")
-  //  document.writeln("<br>")
+
 }
   
 
