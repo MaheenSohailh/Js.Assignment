@@ -1,16 +1,16 @@
 // /////////////  Slider start
 
 var images = [
-   "/Js-Assignment-4/cake1.webp",
-   "/Js-Assignment-4/cake2.webp",
-   "/Js-Assignment-4/cake3.webp",
-   "/Js-Assignment-4/cake4.webp",
-   "/Js-Assignment-4/cake5.webp",
-   "/Js-Assignment-4/cake6.webp",
-   "/Js-Assignment-4/cake7.webp",
-   "/Js-Assignment-4/cake8.webp",
-   "/Js-Assignment-4/cake9.webp",
-   "/Js-Assignment-4/cake10.webp"
+    "cake1.webp",
+   "cake2.webp",
+   "cake3.webp",
+   "cake4.webp",
+   "cake5.webp",
+   "cake6.webp",
+   "cake7.webp",
+   "cake8.webp",
+   "cake9.webp",
+   "cake10.webp"
 
 ];
 
@@ -46,6 +46,7 @@ function prev() {
   }
 
 }
+
 
 
 // ///////////////////  Slider end
