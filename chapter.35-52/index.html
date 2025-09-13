@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ///////// style.css link -->
+ <link rel="stylesheet" href="./style.css">
+
+    <title>Chapter:35-52</title>
+</head>
+<body>
+
+<!-- //////////// alert box on click on a link -->
+  <a href="#" onclick="showAlert()">Click Me</a>
+
+   <br>
+  <!-- ////////// phone  -->
+  <h2>Mobile Gallery :</h2>
+
+  <div class="gallery">
+    <img src="./iPhone9,2.webp"
+         alt="iPhone" onclick="showPhone('iPhone')">
+    <img src="./phone2.webp"
+         alt="Samsung" onclick="showPhone('Samsung Galaxy')">
+    <img src="./phone.webp"
+         alt="Pixel" onclick="showPhone('Google Pixel')">
+    <img src="./Huawei-P8.webp"
+         alt="Huawe" onclick="showPhone('HuaweiP8 ')">
+  </div>
+ <br><br><br>
+<!-- ////////////  delete button -->
+<h2>10 student records :</h2>
+  <table id="Table">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+   <br><br><br>
+  <!-- ////////////// hange image -->
+ <h2>Hover change image :</h2>
+
+  <img id="myImage" src="./shirt.webp" onmouseover="changeImage()" onmouseout="resetImage()">
+   <img id="myImage2" src="./shirt2.webp" onmouseover="change()" onmouseout="reset()">
+
+     <br><br><br>
+  <!-- /////// updated counter value -->
+   <h2>Counter :</h2>
+
+  <div id="counter">0</div>
+
+  <button onclick="increase()">Increase</button>
+  <button onclick="decrease()">Decrease</button>
+
+  <br><br><br>
+  <!-- ///////////// Signup Form -->
+   
+    <h2>Signup Form :</h2>
+  <form id="signup">
+    <label>First Name</label>
+    <input type="text" id="firstName" required>
+
+    <label>Last Name</label>
+    <input type="text" id="lastName" required>
+
+    <label>Email</label>
+    <input type="email" id="email" required>
+
+    <label>Password</label>
+    <input type="password" id="password" required>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <div id="result"></div>
+
+  <br><br>
+  <!-- /////////// read more -->
+
+  <h2>Read More :</h2>
+
+<p id="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid numquam hic quidem optio ducimus similique dolorem, explicabo temporibus fugit autem voluptas
+  <a href="JavaScript:void(0)" onclick="readMore()">Read more...</a>   </p>
+
+
+  <!-- ///////////  Hidden edit form  -->
+
+   <h2>Add Student</h2>
+  <form id="studentForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <input type="text" id="grade" placeholder="Grade" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Name</th><th>Age</th><th>Grade</th><th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+
+  <div id="editSection" class="hidden">
+    <h2>Edit Student</h2>
+    <form id="editForm">
+      <input type="text" id="editName" required>
+      <input type="number" id="editAge" required>
+      <input type="text" id="editGrade" required>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+
+
+  <br><br><br>
+<!-- ////////  copy assignment  -->
+  <!-- copy text  -->
+   
+     <div id="text1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+    </div>
+
+  <button onclick="textCopy()">📋 Copy</button>
+
+  <!-- show and hide list -->
+  <div class="a">
+     
+  <button  onclick="showList()">Show / Hide List</button>
+  <div id="list"></div>
+  
+  </div>
+
+          <!-- /////// index.js  -->
+
+    <script src="./index.js"></script>
+    
+</body>
+</html>
