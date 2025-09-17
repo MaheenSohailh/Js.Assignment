@@ -1,0 +1,22 @@
+body {
+      background-image: url("./numimg.webp");
+     background-repeat: no-repeat, repeat;
+     background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .game {
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .btn-level.active {
+      background-color: #ffc107 !important;
+      color: #000 !important;
+    }

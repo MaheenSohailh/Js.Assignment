@@ -1,0 +1,65 @@
+body{
+   font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Todo{
+  background: linear-gradient(135deg, rgb(235, 228, 165), rgb(187, 113, 177));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+ul{list-style: none;}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  z-index: -1; 
+}
+
+.add{
+     background-color: rgb(209, 36, 209);
+}
+.add:hover {
+  background-color: purple;
+}
+
+
+.editBtn {
+  background-color: rgb(38, 179, 204);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+.deleteBtn {
+  background-color: #f44336;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.editBtn:hover {
+  background-color: rgb(49, 150, 209);
+}
+
+.deleteBtn:hover { background-color: #d32f2f;}
+.bg-danger:hover{background-color: rgb(233, 98, 98) !important;}
+
+.li{ margin-bottom: 20px;
+     background-color: black;
+     padding: 4px 6px;
+     border-radius:10px;
+}

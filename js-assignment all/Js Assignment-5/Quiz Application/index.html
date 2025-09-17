@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<!-- //////// favicon.ico -->
+  <link rel="icon" type="image/x-icon" href="./quizimg.webp">
+<!-- ////////////  confetti.browser.min.js -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<!-- //////////// stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+    <title>Quiz Application</title>
+
+</head>
+<body>
+
+<div class="quiz">
+  <h1>Quiz Start</h1>
+  <div id="box">
+    <div id="question"></div>
+      <div id="answers" class="btn-grid"></div>
+      <button type="button" id="next-btn" class="next-btn"> Next </button>
+  </div>
+
+  <div class="hidden" id="result">
+    <h2>Your Score</h2>
+    <p id="score"></p>
+    <button type="button" id="restart" class="restart-btn"> Restart</button>
+  </div>
+</div>
+
+  <canvas id="confetti"></canvas>
+
+<audio id="win-sound" src="./sound.wav" preload="auto"></audio>
+
+<!-- /////////// index.js -->
+  <script src="index.js"></script>
+</body>
+</html>
