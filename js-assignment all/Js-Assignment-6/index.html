@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ///// favicon //// -->
+    <link rel="shortcut icon" href="https://imgs.search.brave.com/s0sAoAYqjnM-3HuaKmSnFn9m0nALhzTxEXM8ChETABk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/Y3JlYXRlLnZpc3Rh/LmNvbS9hcGkvbWVk/aWEvc21hbGwvMTY5/MTY4MDY4L3N0b2Nr/LXBob3RvLWF0bQ" type="image/x-icon">
+
+    <!-- /////// font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ///////// BOOTSTRAP.MIN.CSS-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     
+     <!-- ////// style.css -->
+    <link rel="stylesheet" href="./style.css">
+
+    <title>ATM</title>
+</head>
+<body>
+    
+  <!-- //////// section start -->
+
+<section class="d-flex justify-content-center p-5">
+
+<!-- //////// card1 start -->
+<div id="card1" class="card card active rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+    <!-- <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;"> -->
+    <h1 class="card-title fw-bold mt-0 mt-md-5 pt-0 pt-sm-3" style="font-size: 3rem;">
+      Welcome to <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="194px" alt="image"  style="cursor: pointer;">
+    </a></h1>
+    <p class="card-text text-white fs-5">Please dip your card in the slot and remove it to begin</p>
+    <span><img class="mt-0 mt-md-5 pb-2" src="./atmcard.png" width="136px" height="55px" alt="atmcard" style="cursor: pointer;"></span>
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button  onclick="next(1)" class="btn fw-bold fs-5">Proceed</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+<!-- // card1 end -->
+
+<!-- //////// card2 start -->
+<div id="card2" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4 pt-4">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+    <h1 class="card-title fw-bold mt-0 mt-md-5 pt-0 pt-sm-5" style="font-size: 3rem;">Enter PIN</h1>
+    <p class="card-text text-white fs-5">It must be 4 characters long (e.g., 6854)</p>
+    <input type="password" name="pin" maxlength="4" class="w-25 ps-2 ps-md-5 mt-0 mt-md-3 mb-0 mb-md-4">
+    <div class="msg text-white"></div>
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button onclick="next(2)" class="btn fw-bold fs-5">Proceed</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+<!-- // card2 end -->
+
+
+<!-- //////// card3 start -->
+<div id="card3" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4 pt-4">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+    <h1 class="card-title fw-bold mt-0 mt-md-5 pt-0 pt-sm-5" style="font-size: 2.5rem;">
+      Select Transaction</h1>
+    <p class="card-text text-white fs-5">Choose one of the following options:</p>
+    <div class="d-flex gap-4 column-gap-3 mb-0 mb-md-5 pb-0 pb-5 pt-3" style="flex-wrap: wrap !important;">
+      <button onclick="info()" class="btn fw-bold fs-5">Account Information</button>
+      <button onclick="save()" class="btn fw-bold fs-5">Deposit</button>
+      <button onclick="withdraw()" class="btn fw-bold fs-5">Withdraw</button>
+    </div>
+
+  </div>
+
+  <small class="m-2 text-white"> © 2025 Made by | Maheen Sohail All rights reserved </small>
+</div>
+<!-- // card3 end -->
+
+
+<!-- ////// slip Account Information start -->
+<div id="card4" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4 pt-2">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+     <div class="text-success mt-2 me-0 me-sm-5 pb-1 bg-white rounded-4 border-0 ms-0 ms-sm-5" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
+    <div class="bg-success ms-5 rounded-circle border-0 fs-3 text-white p-2 " style="width: fit-content; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;">
+      <i class="fa-solid fa-check"></i></div>
+<div class="ms-3 ms-md-5 ps-0 ps-md-5">
+        <h3><strong>Cash Raceipt</strong></h3>
+   <p><strong>Id : </strong> <span id="id"></span></p>
+   <p><strong>Current Balance : </strong> <span id="balance"></span></p>
+   <p><strong>Date : </strong> <span id="date"></span></p>
+   <p><strong>Time : </strong> <span id="time"></span></p>
+   <p><strong>Bank card : </strong> <span id="bank"></span></p>
+</div>
+
+  </div>
+
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button onclick="back(4)" class="btn fw-bold fs-5">Back</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+<!-- ////// slip Account Information end -->
+
+
+<!-- //////// card5 start -->
+<div id="card5" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4 pt-4">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+    <h1 class="card-title fw-bold mt-0 mt-md-5 pt-0 pt-sm-5" style="font-size: 3rem;">Enter Amount</h1>
+    <p class="card-text text-white fs-5">and click proceed</p>
+       <input id="depositAmount" type="number" name="depositAmount" min="1" class="w-25 ps-2 ps-md-5 mt-0 mt-md-3 mb-0 mb-md-4">
+    <div  id="depositMsg" class="text-white"></div>
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button onclick="nexted(5)" class="btn fw-bold fs-5">Proceed</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+</div>
+<!-- // card5 end -->
+
+
+<!-- ////// slip deposit start -->
+<div id="card6" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4 pt-2">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+     <div class="text-success mt-2 me-0 me-sm-5 pb-1 bg-white rounded-4 border-0 ms-0 ms-sm-5" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
+    <div class="bg-success ms-5 rounded-circle border-0 fs-3 text-white p-2 " style="width: fit-content; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;">
+      <i class="fa-solid fa-check"></i></div>
+<div class="ms-3 ms-md-5 ps-0 ps-md-5">
+        <h3><strong>Deposit Successful</strong></h3>
+   <p><strong>Id : </strong> <span id="idDeposit"></span></p>
+   <p><strong>Current Balance : </strong> <span id="deposit"></span></p>
+   <p><strong>Date : </strong> <span id="dateDeposit"></span></p>
+   <p><strong>Time : </strong> <span id="timeDeposit"></span></p>
+   <p><strong>Bank card : </strong> <span id="bankDeposit"></span></p>
+   <h3><strong>Thank you</strong></h3>
+</div>
+  </div>
+
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button onclick="backed()" class="btn fw-bold fs-5">proceed</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+<!-- ////// slip deposit end -->
+
+<!-- //////// card7 start -->
+<div id="card7" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4 pt-4">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+    <h1 class="card-title fw-bold mt-0 mt-md-5 pt-0 pt-sm-5" style="font-size: 3rem;">Enter Amount</h1>
+    <p class="card-text text-white fs-5">and click proceed</p>
+       <input id="withdrawAmount" type="number" name="number" min="1" class="w-25 ps-2 ps-md-5 mt-0 mt-md-3 mb-0 mb-md-4">
+    <div id="withdrawMsg" class="msg text-white"></div>
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button onclick="given(7)" class="btn fw-bold fs-5">Next</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+</div>
+<!-- // card7 end -->
+
+
+<!-- ////// slip Withdraw start -->
+<div id="card8" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4 pt-2">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+     <div class="text-success mt-2 me-0 me-sm-5 pb-1 bg-white rounded-4 border-0 ms-0 ms-sm-5" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
+    <div class="bg-success ms-5 rounded-circle border-0 fs-3 text-white p-2 " style="width: fit-content; box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;">
+      <i class="fa-solid fa-check"></i></div>
+<div class="ms-3 ms-md-5 ps-0 ps-md-5">
+        <h3><strong>Withdraw Successful</strong></h3>
+   <p><strong>Id : </strong> <span id="idWithdraw"></span></p>
+   <p><strong>Current Balance : </strong> <span id="withdraw"></span></p>
+   <p><strong>Date : </strong> <span id="dateWithdraw"></span></p>
+   <p><strong>Time : </strong> <span id="timeWithdraw"></span></p>
+   <p><strong>Bank card : </strong> <span id="bankWithdraw"></span></p>
+   <h3><strong>Thank you</strong></h3>
+</div>
+  </div>
+
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button onclick="backagain()" class="btn fw-bold fs-5">Next</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+<!-- ////// slip Withdraw end -->
+
+
+<!-- //////// card9 start -->
+<div id="card9" class="card rounded-4 border-0 pb-2">
+
+  <div class="card-body px-4">
+    <a target="_blank" href="https://www.habibmetro.com/information-center/branch-information/atm-branch-locator/">
+      <img src="./logo.png" width="196px" alt="image"  style="cursor: pointer;">
+    </a>
+    <h1 class="card-title fw-bold mt-0 mt-md-5 pt-0 pt-sm-3" style="font-size: 3rem;">Your Cash is Ready</h1>
+    <span><img class="mt-0 mt-md-5 pb-2" src="./withdrawimg.png" width="136px" height="55px" alt="withdraw" style="cursor: pointer;"></span>
+    <div class="my-3 gap-2 d-md-flex justify-content-md-end">
+      <button  onclick="StartAgain()" class="btn fw-bold fs-5">Start Again</button></div>
+  </div>
+  <small class="m-2 text-white">© 2025 Made by | Maheen Sohail All rights reserved</small>
+</div>
+<!-- // card9 end -->
+
+
+</section>
+
+  <!-- //////// section end -->
+
+    <!-- //////// file.js -->
+<script src="./file.js"></script>
+    <!-- ///////// BOOTSTRAP.MIN.JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+</body>
+</html>
