@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <!-- /// favicon link -->
+    <link rel="favicon icon" href="https://imgs.search.brave.com/BDOk3O61vQNFhJF5T-YePnwahPyDqUxu-FUQYI2M4q8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by91/c2VyLWZyb250LXNp/ZGUtd2l0aC13aGl0/ZS1iYWNrZ3JvdW5k/XzE4NzI5OS00MDAw/Ny5qcGc_c2VtdD1h/aXNfaHlicmlkJnc9/NzQwJnE9ODA" type="image/x-icon">
+
+    <!-- ///// bootstrap.min.css -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Admin-Login</title>
+
+    <!-- //// css start -->
+     <style>
+    .error { color: red !important; font-size: 0.9rem !important; }
+    .input-error { border-color: red !important; box-shadow: rgb(231, 218, 145) 0px 48px 100px 0px; }
+    </style>
+
+    <!-- //// css end -->
+
+</head>
+<body class="bg-warning-subtle">
+
+    <!-- /// loader image start -->
+<div id="loader" class="bg-white align-items-center" style="height:100vh;">
+<img class="mx-auto d-block" src="./loading-loader.webp" alt="loader-img">
+</div>
+<!-- ///// loader image end -->
+
+<!-- //// form section start -->
+<section id="loginForm" class="justify-content-center align-content-center mt-5 pt-5">
+    <div class="card mb-3 bg-warning border border-2 border-secondary" style="max-width: 540px; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="./food-img.webp" class="img-fluid rounded-start h-100" alt="food-img">
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+    <form id="myForm" novalidate>
+        <h1 class="card-title fw-bold">Login</h1>
+         <label>Name:</label>
+        <input type="text" id="name" class="form-control mb-1" placeholder="Enter name" required>
+        <div id="nameErr" class="error" aria-live="polite"></div>
+
+        <label>Email</label>
+        <input type="email"  id="email" class="form-control mb-1" placeholder="Enter Email">
+        <div id="emailErr" class="error" aria-live="polite"></div>
+
+        <label>Password</label>
+        <input type="password" id="password" class="form-control mb-1" maxlength="6">
+        <div id="passwordErr" class="error" aria-live="polite"></div>
+
+        <div class="gender mb-3 mt-4">
+              <input type="radio" name="gender" value="male" aria-checked="true">
+              <label for="male">Male</label>
+              <input type="radio" name="gender" value="female">
+              <label for="female">Female</label>
+            </div>
+            <button id="submitBtn" class="rounded px-3 py-1 fw-bold btn btn-dark" type="submit">Create Account</button>
+  </form>
+
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- //////// form section end -->
+
+
+    <!-- ////// bootstrap.min.js //// -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+
+<script src="./file.js"></script>
+    
+</body>
+</html>

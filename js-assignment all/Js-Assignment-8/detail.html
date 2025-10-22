@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- /// favicon link -->
+    <link rel="favicon icon" href="https://imgs.search.brave.com/99I0PgRKKng4YWGS7Op4BwDJp_GYXHXAOk0RMgmTUuE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9mb29kLWxp/a2UtY3V0bGV0cy1w/b3RhdG8td2VkZ2Vz/LTI2MG53LTI1MTk2/NDk4MDEuanBn" type="image/x-icon">
+
+  <!-- //////// bootstrap.min.css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <title>Recipe Details</title>
+
+<!-- ////// css start -->
+    <style>
+      .card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+#detail-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+}
+    </style>
+
+<!-- ///// css end  -->
+
+</head>
+<body class="bg-warning-subtle">
+
+  <!-- ///// detail page start -->
+
+<div class="d-flex justify-content-center">
+  <div class="card my-2 rounded-4 border border-black" style="max-width: 940px;">
+  <div class="row g-0 rounded-4" style="box-shadow: rgba(6, 6, 7, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;">
+    <div class="col-md-4">
+        <img id="detail-img" src="" class="img-fluid rounded-start-4" alt="image...">
+
+    </div>
+    <div class="col-md-8">
+        <div class="card-body bg-warning rounded-end-4 text-white">
+    <h1 id="detailTitle" class="text-white">Recipe title...</h1>
+       <h3 class="text-secondary">Timings: <span id="detailTimings"></span></h3>
+
+       <h4 class="fw-bold text-black">Ingredients:</h4>
+       <ul id="detail-ING" >
+          <!-- <li></li> -->
+       </ul>
+
+        <h4 class="fw-bold text-black">Instructions:</h4>
+       <ul id="detail-ins">
+        <!-- <li></li> -->
+       </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ///// detail page end -->
+
+  <!-- //// js start -->
+<script>
+  const getDetail =()=>{
+   const urlDetail = new URLSearchParams(window.location.search);
+   return urlDetail.get("id"); 
+  }
+
+const fetchData = async () => {
+  try {
+
+    const reponse = await fetch("https://dummyjson.com/recipes");
+    return reponse.json();
+
+  } catch (error) {
+    throw new Error(`Error in data Fetch : ${error}`)
+
+  }
+}
+
+
+const detailImg = document.getElementById("detail-img");
+const detailTitle = document.getElementById("detailTitle");
+const detailTimings = document.getElementById("detailTimings");
+const detailIng = document.getElementById("detail-ING");
+const detailIns = document.getElementById("detail-ins");
+
+const showDetails = async () => {
+
+  let result = await fetchData();
+  
+  const recipes = result?.recipes;
+   
+  const id =  getDetail();
+
+  const recipe = await recipes.find((r) =>r.id === Number(id)
+  );
+  console.log(recipe);
+
+  detailImg.src = recipe.image;
+  detailTitle.innerText = recipe.name;
+  detailTimings.innerText = recipe.prepTimeMinutes;
+
+  // ingredients
+  recipe.ingredients.forEach((ingredient) => {
+    const li = document.createElement("li");
+    li.innerText = ingredient;
+    detailIng.appendChild(li)
+  })
+
+
+  // instructions
+  recipe.instructions.forEach((instruction) => {
+    const li = document.createElement("li");
+    li.innerText = instruction;
+    detailIns.appendChild(li)
+  })      
+}
+showDetails();
+
+</script>
+
+<!-- // js end -->
+
+</body>
+</html>

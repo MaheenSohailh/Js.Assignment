@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- /// favicon link -->
+    <link rel="favicon icon" href="https://imgs.search.brave.com/a-GvAdfK5jUK3kd7WMM1xDcPrCoNq6Oz1jnmyaRM9e0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXBob3RvL3RyYWRp/dGlvbmFsLWluZGlh/bi1mb29kLXBsYXR0/ZXItd2lkZS0yNjBu/dy0yNDYxNzE5MTU5/LmpwZw" type="image/x-icon">
+
+     <!-- ///// bootstrap.min.css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Recipes</title>
+
+    <!-- ////// css start -->
+   <style>
+     .card{ 
+        width : 18rem;
+     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+     background-color: rgb(247, 197, 31);
+}
+   </style>
+    <!-- /// css end -->
+</head>
+<body class="bg-warning-subtle">
+
+    <!-- //////// navbar start -->
+    <nav class="navbar bg-warning mb-5">
+      <div class="container-fluid">
+        <h1 id="welcome" class="fw-bold fs-3 navbar-brand"></h1>
+        <form class="d-flex" role="search" onsubmit="return false;">
+          <input class="form-control me-2" oninput="searchInput(this.value)" type="search" placeholder="Search recipe..." aria-label="Search"/>
+          <button class="btn btn-outline-dark" type="button">Search</button>
+        </form>
+      </div>
+    </nav>
+    <!-- //////// navbar end -->
+
+    <!-- /// recipeBook start -->
+    <div id="recipeBook" class="container-xxl d-flex justify-content-center gap-5 flex-wrap"></div>
+<!-- ///// recipeBook end -->
+
+    <!-- ////// js start -->
+    <script>
+      //   ////////////   top name start ///////
+      const params = new URLSearchParams(window.location.search);
+      const userName = params.get("name");
+
+      if (userName) {
+        document.getElementById("welcome").innerText = `Welcome ${userName}! 👋🏻`;
+      }
+      //   ////////////   top name end ///////
+
+      // ////////  recipes ///////
+      let allRecipes = [];
+
+      const fetchData = async () => {
+        try {
+          const response = await fetch("https://dummyjson.com/recipes");
+          const data = await response.json();
+          allRecipes = data.recipes;
+          showRecipes(allRecipes);
+        } catch (error) {
+          console.error("Error in data Fetch:", error);
+        }
+      };
+
+      fetchData();
+
+      const showRecipes = (recipes) => {
+        const recipeBook = document.getElementById("recipeBook");
+        recipeBook.innerHTML = "";
+
+        if (recipes && recipes.length > 0) {
+          recipes.forEach(recipe => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            card.innerHTML = `
+              <img src="${recipe.image}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${recipe.name}</h5>            
+                <p class="card-text">Cuisine: ${recipe.cuisine}</p>
+                <p class="card-text">Ratings: ${recipe.rating}</p>
+                <p class="card-text">Servings: ${recipe.servings}</p>
+                <a class="btn btn-dark" href="./detail.html?id=${recipe.id}" target="_blank">Recipe Details</a>
+              </div>`;
+            recipeBook.appendChild(card);
+          });
+        } else {
+          recipeBook.innerHTML = `<p class="fs-1 text-danger fw-bold">Recipe not found 🔍</p>`;
+        }
+      };
+
+      // 🔍 Search Function
+      function searchInput(query) {
+        const searchValue = query.toLowerCase();
+        const filtered = allRecipes.filter(recipe =>
+          recipe.name.toLowerCase().includes(searchValue)
+        );
+        showRecipes(filtered);
+      }
+    </script>
+    <!-- /////////  js end -->
+</body>
+</html>
