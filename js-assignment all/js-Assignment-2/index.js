@@ -154,7 +154,7 @@
     /////////////////  minus prompt
 
        var minus = "10";
-      var minu = prompt("Kitna hota hai : 20 + 10 ?");
+      var minu = prompt("Kitna hota hai : 20 - 10 ?");
 
     if (!minu) {
     } else if (minu === minus) {
@@ -162,3 +162,4 @@
     } else {
      alert("Incorrect Number. 😞🤔");
     }
+
